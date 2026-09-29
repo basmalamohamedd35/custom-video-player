@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Custom Video Player</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <div class="brand">
+            <span class="brand-main">VIDEO</span>
+            <span class="brand-accent">PLAYER</span>
+        </div>
+
+        <p class="brand-subtitle"> Upload & Download </p>
+
+    </header>
+
+
+    <main>
+
+        <div class="video-player">
+
+            <div class="video-screen">
+
+                <video id="video"> Your browser does not support the video tag. </video>
+
+                <div class="empty-state">
+                    <div class="empty-icon"> ▶ </div>
+
+                    <strong>No video selected</strong>
+
+                    <span> Upload a video to get started </span>
+                </div>
+
+            </div>
+
+
+            <div class="controls">
+
+                <button id="playPause" aria-label="Play"> ▶ </button>
+                
+                <button id="backward" class="skip-button" aria-label="Backward 10 seconds"> ↶ 10 </button>
+                <button id="forward" class="skip-button" aria-label="Forward 10 seconds"> 10 ↷ </button>
+
+                <input
+                    type="range"
+                    id="progress"
+                    min="0"
+                    max="100"
+                    value="0"
+                    aria-label="Video progress"
+                >
+
+                <span id="currentTime"> 00:00 </span>
+                <span class="time-separator"> / </span>
+                <span id="duration"> 00:00 </span>
+
+
+                <button id="mute" aria-label="Mute"> 🔊 </button>
+                <input
+                    type="range"
+                    id="volume"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="1"
+                    aria-label="Volume"
+                >
+
+
+                <button id="fullscreen" aria-label="Enter fullscreen">
+
+                    <svg class="fullscreen-icon enter-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 3H3v6  M15 3h6v6  M21 15v6h-6  M3 15v6h6"/>
+                    </svg>
+
+                    <svg class="fullscreen-icon exit-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 3H3v6  M15 3h6v6  M21 15v6h-6  M3 15v6h6"/>
+                    </svg>
+
+                </button>
+
+
+                <a id="download" download aria-label="Download video"> ↓ </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="upload-area" id="uploadArea">
+
+            <div class="upload-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d=" M12 16V4   M7 9l5-5 5 5   M5 20h14"/>
+                </svg>
+
+            </div>
+
+            <div class="upload-text">
+
+                <strong> Drop your video here </strong>
+                <span> or browse files from your device </span>
+
+            </div>
+
+
+            <label for="videoUpload" class="choose-video"> Choose Video </label>
+            <span class="supported-formats"> MP4 · WebM · MOV </span>
+
+            <input
+                type="file"
+                id="videoUpload"
+                accept="video/*"
+            >
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
